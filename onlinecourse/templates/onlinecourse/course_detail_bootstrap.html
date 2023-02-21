@@ -62,7 +62,7 @@
             A collapse example here:-->
             {% if user.is_authenticated %}
                 <div id="exam" class="collapse">
-                    <form id="questionform" action="" method="POST">
+                    <form id="questionform" action="{% url 'onlinecourse:submit' course.id %}" method="POST">
                         {% for question in course.question_set.all %}
                         <div class="card mt-1">
                             <div class="card-header"><h5>{{ question.content }}</h5></div>
